@@ -1,0 +1,23 @@
+# Hugo default output directory
+/public
+/resources/_gen/
+
+# OSX
+.DS_Store
+
+# npm
+node_modules
+package-lock.json
+
+# webstorm
+.idea/
+
+# themes
+themes/
+
+# convert results
+_output
+# python
+*.pyc
+__pycache__
+*.pdf
