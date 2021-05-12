@@ -38,4 +38,8 @@ docker ps | grep cboard
 dcfa78ba8754        registry.cn-beijing.aliyuncs.com/yunionio/cboard:0.4.1   "/root/startup.sh"
 ```
 
-访问地址为 `http://IP:8082/cboard/`
+访问地址为 `http://IP:8082/cboard/`，默认登录信息为：'admin/root123'，进入系统后可以改用户名密码。
+
+## 其它
+
+如果想了解部署步骤，可以看下 `cat roles/cboard/tasks/main.yml` 文件。
