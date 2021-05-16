@@ -29,7 +29,7 @@ CJKmainfont: Source Han Serif CN
 # 查看当前系统网卡的 IP ，发现是 10.127.100.9
 # 这个 IP 后面编写部署配置文件会用到
 # 请根据自己的环境把 IP 记录下来
-$ ip addr 
+$ ip addr
 ...
 2: enp0s2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 62:64:00:12:32:78 brd ff:ff:ff:ff:ff:ff
@@ -60,7 +60,9 @@ $ systemctl restart sshd
 
 ```bash
 # 生成密钥对
-$ ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
+$ if [ ! -f /root/.ssh/id_rsa ]; then
+   ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
+ fi
 
 # 放入授权文件
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 600  ~/.ssh/*
