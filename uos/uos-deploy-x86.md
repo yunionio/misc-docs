@@ -60,7 +60,9 @@ $ systemctl restart sshd
 
 ```bash
 # 生成密钥对
-$ ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
+$ if [ ! -f /root/.ssh/id_rsa ]; then
+   ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
+ fi
 
 # 放入授权文件
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 600  ~/.ssh/*
